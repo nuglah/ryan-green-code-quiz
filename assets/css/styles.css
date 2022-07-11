@@ -1,5 +1,6 @@
-#quiz {
+#start-quiz {
   text-align: center;
+  display: block;
 }
 #timer {
   text-align: end;
