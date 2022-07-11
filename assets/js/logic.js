@@ -79,14 +79,13 @@ function renderQuiz(questionNumber) {
       renderQuiz(questionNumber);
     } else {
       // I am done show results write score to localstorage
+      showScore();
     }
   });
 }
 
 function showScore() {
-  var displayScore = document.createElement("h3");
-
-  displayScore.textContent = "Score";
+  document.getElementById("final-score").innerText = score;
 }
 
 startQuizBtn.addEventListener("click", function (event) {
@@ -100,7 +99,7 @@ startQuizBtn.addEventListener("click", function (event) {
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   let scores = JSON.parse(localStorage.getItem("scores")) || [];
-  let sortedScores = scores.sort((a, b) => (a.score > b.score ? -1 : 1));
+
   const fname = document.getElementById("fname");
   const initials = fname.value;
 
