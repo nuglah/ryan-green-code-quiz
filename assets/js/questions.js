@@ -20,9 +20,9 @@ var questions = [
     answer: "while",
   },
   {
-    questionText: "Whats the capital of syria?",
-    choices: ["idk", "idk", "idk", "idk"],
-    answer: "idk",
+    questionText: "Is java the same as javascript?",
+    choices: ["yes", "no", "no", "no"],
+    answer: "no",
   },
   {
     questionText: "What function adds an element to the end of an array?",
