@@ -18,7 +18,7 @@ for (var i = 0; i < sortedScores.length; i++) {
 // Goes back to quiz
 backButton.addEventListener("click", function (event) {
   event.preventDefault();
-  window.open("../../index.html", "_self");
+  window.open("index.html", "_self");
 });
 
 // Clears local stoarge and scores don't display on page
