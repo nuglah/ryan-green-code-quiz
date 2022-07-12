@@ -8,6 +8,7 @@ var scoreDiv = document.getElementById("score-container");
 var submitButton = document.getElementById("submit-button");
 var hasClick = false;
 var playAgain = document.getElementById("play-again");
+var answer = "";
 
 // Shows your current score when time runs out or all questions answered
 function showScore() {
@@ -36,7 +37,7 @@ function countdown() {
 function renderQuiz(questionNumber) {
   console.log("run");
   //   var question = questions[questionNumber].questionText;
-  var answer = questions[questionNumber].answer;
+  answer = questions[questionNumber].answer;
   var displayWordElement = document.createElement("h3");
   var button1 = document.createElement("button");
   var button2 = document.createElement("button");
@@ -63,6 +64,10 @@ function renderQuiz(questionNumber) {
         console.log("increment score");
         score++;
       } else {
+        console.log("reduce time");
+        console.log("innerText ", event.target.innerText);
+        console.log("answer ", answer);
+        console.log("questionNumber ", questionNumber);
         timeLeft -= 5;
       }
       // advances to the next question in question array
