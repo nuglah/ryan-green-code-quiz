@@ -1,6 +1,6 @@
 var questions = [
   {
-    questionText: "How to declare a variable in Javascript?",
+    questionText: "How do you declare a variable in Javascript?",
     choices: ["var", "for", "while", "if"],
     answer: "var",
   },
