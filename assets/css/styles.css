@@ -23,7 +23,7 @@ body {
   text-align: center;
 }
 button {
-  background-color: #98b4d4; /* Green */
+  background-color: #98b4d4;
   border: none;
   color: white;
   padding: 10px;
@@ -41,7 +41,7 @@ button:hover {
 }
 
 #submit-button {
-  background-color: #98b4d4; /* Green */
+  background-color: #98b4d4;
   border: none;
   color: white;
   padding: 10px;

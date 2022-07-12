@@ -15,7 +15,7 @@ function showScore() {
   document.getElementById("final-score").innerText = "Your score is " + score;
 }
 
-// Function for the countdown. Shows the score when the timer runs out
+// Function for the countdown. Shows the score if the timer runs out
 function countdown() {
   timeInterval = setInterval(function () {
     if (timeLeft > 1) {
@@ -35,8 +35,6 @@ function countdown() {
 
 // This builds the actual quiz and creates questions and buttons for the answers to be clicked on
 function renderQuiz(questionNumber) {
-  console.log("run");
-  //   var question = questions[questionNumber].questionText;
   answer = questions[questionNumber].answer;
   var displayWordElement = document.createElement("h3");
   var button1 = document.createElement("button");
@@ -55,25 +53,21 @@ function renderQuiz(questionNumber) {
   quiz.appendChild(button3);
   quiz.appendChild(button4);
   //  this event listener will increase the score or decrease time based on if the answer is correct. It will also trigger the next question and remove the previous one.
+  // If statement prevents the onlick from running too many times by setting hasClick to true.
   if (!hasClick) {
     hasClick = true;
     quiz.addEventListener("click", function (event) {
       event.preventDefault();
       if (event.target.innerText === answer) {
         //increment score
-        console.log("increment score");
         score++;
       } else {
-        console.log("reduce time");
-        console.log("innerText ", event.target.innerText);
-        console.log("answer ", answer);
-        console.log("questionNumber ", questionNumber);
+        // Subtract time
         timeLeft -= 5;
       }
-      // advances to the next question in question array
+      // advances to the next question in question array and shows score when finished
       questionNumber++;
       if (questionNumber < questions.length) {
-        console.log("true");
         quiz.innerHTML = "";
         renderQuiz(questionNumber);
       } else {
@@ -99,7 +93,6 @@ startQuizBtn.addEventListener("click", function (event) {
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   let scores = JSON.parse(localStorage.getItem("scores")) || [];
-
   const fname = document.getElementById("fname");
   const initials = fname.value;
 
@@ -108,6 +101,7 @@ submitButton.addEventListener("click", function (event) {
   window.open("scores.html", "_self");
 });
 
+// The button called try again that will restart the quiz.
 playAgain.addEventListener("click", function (event) {
   event.preventDefault();
   window.open("index.html", "_self");

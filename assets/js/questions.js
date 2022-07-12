@@ -1,3 +1,4 @@
+// Array containing questions, choices and answers
 var questions = [
   {
     questionText: "How do you declare a variable in Javascript?",
