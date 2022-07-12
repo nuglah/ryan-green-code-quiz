@@ -105,7 +105,7 @@ submitButton.addEventListener("click", function (event) {
 
   scores.push({ initials: initials, score: score });
   localStorage.setItem("scores", JSON.stringify(scores));
-  window.open("scores.html", "_self");
+  window.open("ryan-green-code-quiz/scores.html", "_self");
 });
 
 playAgain.addEventListener("click", function (event) {
