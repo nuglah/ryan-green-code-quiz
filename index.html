@@ -8,24 +8,33 @@
     <title>Code Quiz</title>
   </head>
   <body>
-    <!-- Link to a seperate page containing high scores. -->
-    <a href="scores.html" target="_blank">View High Scores</a>
-    <h3 id="timer"></h3>
-    <div id="start-quiz">
-      <h2>This is the game</h2>
-      <button id="start-button">Start</button>
+    <div class="container">
+      <!-- Link to a seperate page containing high scores. -->
+      <a href="scores.html" target="_blank">View High Scores</a>
+      <!-- The timer -->
+      <h3 id="timer">Time: 0</h3>
+      <div id="start-quiz">
+        <h2>This is the game</h2>
+        <!-- The start button you click on to start the quiz -->
+        <button id="start-button">Start</button>
+      </div>
+      <!-- div for the actual quiz -->
+      <div id="quiz"></div>
+      <!-- div for the score that shows after quiz is over -->
+      <div id="score-container" style="display: none">
+        <h3>Submit score</h3>
+        <p id="final-score"></p>
+        <button id="play-again">Try Again</button>
+        <!-- form for entering intitials and saving score -->
+        <form>
+          <label for="fname">Enter initials</label><br />
+          <input type="text" id="fname" name="fname" /><br />
+          <input type="submit" value="Submit" id="submit-button" />
+        </form>
+      </div>
+      <!-- seperate javascript files for the question array and the logic -->
+      <script src="./assets/js/questions.js"></script>
+      <script src="./assets/js/logic.js"></script>
     </div>
-    <div id="quiz"></div>
-    <div id="score-container" style="display: none">
-      <h3>Scores</h3>
-      <p id="final-score"></p>
-      <form>
-        <label for="fname">Enter initials</label><br />
-        <input type="text" id="fname" name="fname" /><br />
-        <input type="submit" value="Submit" id="submit-button" />
-      </form>
-    </div>
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
   </body>
 </html>
